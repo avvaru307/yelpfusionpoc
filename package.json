@@ -1,0 +1,23 @@
+{
+  "name": "yelpfusionpoc",
+  "version": "1.0.0",
+  "description": "code challenge poc",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "yelpfusionpoc"
+  },
+  "keywords": [
+    "yelp",
+    "fusion"
+  ],
+  "author": "eswaraiah avvaru",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "request": "^2.88.0"
+  }
+}
