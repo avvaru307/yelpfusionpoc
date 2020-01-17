@@ -7,16 +7,20 @@ Prerequesities
 2) You can follow steps if pre requesities are met.
 
     a) Downlaod the package from the git repository
+    
+    b) REplace api key in teh app.js
+        
+     const apiKey = 'api key here'
 
-    b) Install node modules using below command
+    c) Install node modules using below command
 
     npm install
 
-    c) To start the application
+    d) To start the application
 
        node app.js
 
-    d) to access the applciaiton use below urls
+    e) to access the applciaiton use below urls
 
       http://localhost:3000/businesses/search
       http://localhost:3000/businesses/search?location=Alpharetta&categories=ice%20cream
