@@ -4,11 +4,11 @@ Prerequesities
 
 1) Install latest nodejs
 
-2) You can follow steps if pre requesities are met.
+2) You can follow below steps if pre requesities are met.
 
     a) Downlaod the package from the git repository
     
-    b) REplace api key in teh app.js
+    b) Replace api key in the app.js
         
      const apiKey = 'api key here'
 
