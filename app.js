@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 const request = require("request");
-const apiKey = 'Y8s6dW3uAs-TZ34YRekghk7llJxJuj3JjNAcLtADi-OZ02Dl66_soagZHv-eTyQFHC8fGWfxblXrZxyW3msB1GARItcv2KG0qhzgowweVi4qxdw3fijzXeIyKKd2XXYx';
+const apiKey = 'api key here';
 var errHandler = function(err) {  console.log(err); };
 let reviewsURL = "https://api.yelp.com/v3/businesses/{id}/reviews";
 app.get('/businesses/search', function (req, res) {
