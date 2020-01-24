@@ -11,6 +11,8 @@ Prerequesities
     b) Replace api key in the app.js
         
      const apiKey = 'api key here'
+     
+     Replace api key here with actual key
 
     c) Install node modules using below command
 
