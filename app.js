@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 const request = require("request");
-const apiKey = 'api key here';
+const apiKey = 'Y8s6dW3uAs-TZ34YRekghk7llJxJuj3JjNAcLtADi-OZ02Dl66_soagZHv-eTyQFHC8fGWfxblXrZxyW3msB1GARItcv2KG0qhzgowweVi4qxdw3fijzXeIyKKd2XXYx';
 var errHandler = function(err) {  console.log(err); };
 let reviewsURL = "https://api.yelp.com/v3/businesses/{id}/reviews";
 app.get('/businesses/search', function (req, res) {
@@ -21,16 +21,16 @@ app.get('/businesses/search', function (req, res) {
 						let business = result.businesses[i],business_output = {"business_id":business.id, 'business_name':business.name,'business_address':business.location.display_address.join(',')};; 
 						businesses.push(business_output);
 						reviewsURL = reviewsURL.replace('{id}',business.id);						
-						var anotherPromise = getData(reviewsURL,apiKey,business.id).then(JSON.parse).then(function(data) {
+						var anotherPromise = getData(reviewsURL,apiKey,business.id).then(JSON.parse, errHandler).then(function(data) {
 								business.reviews = data;
 								businesses.map(bitem => {									
 									if(bitem.business_id == business.id) bitem.reviews = data.reviews.map(obj => {return  {'excert_review':obj.text, 'user_name':obj.user.name}});
 								});
 								_count--;
 								if(_count == 0) res.send(businesses);	
-							}, errHandler);
+							}, errHandler).catch((err) => {res.send("Error while fetching");});
 					}
-                }, errHandler);
+                }, errHandler).catch((err) => {res.send("Error while fetching");});
 });
 function getData(url,apiKey) {
     var options = { url: url,  headers: { 'User-Agent': 'request',  'Authorization': 'Bearer '+apiKey }};
